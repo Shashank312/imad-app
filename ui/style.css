@@ -1,23 +1,214 @@
-body {
+body{
+     background-color: black;
+}
+h1{
+    font-family:'Roboto Slab', serif;
+    color:dodgerblue;
+    color:white;
+    margin-top:15px;
+    padding:5px;
+    font-size:16px;
+}
+#bgimg{
+        background-image:url("valley.jpg");
+        width: 101%;
+        height: 101%;
+        top:-1%;
+        left:-1%;
+        position: absolute; 
+        background-size:cover;
+        font-family: sans-serif;
+        text-align: center;
+        #filter: blur(4px);
+        z-index: 7;
+        
+}
+#bgimg:active
+{
+    #transition: all 2s ease;
+    filter:blur(3px);
+    z-index:-1;
+}
+.box,.smallbox{
+    width: 380px;
+    height: 400px; #430px;
+    background: rgba(0,0,0,0.5);
+    border-radius:10px;
+    color: white;
+    padding:10px;
     font-family: sans-serif;
-    background-color: lightgrey;
-    margin-top: 75px;
-}
-
-.center {
+    position: absolute;
+    box-sizing: border-box;
     text-align: center;
+    top: 20%;
+    left: 37%;
+    z-index:7;
 }
 
-.text-big {
-    font-size: 300%;
+.smallbox
+{
+    height:230px;
 }
 
-.bold {
+.box:hover,.smallbox:hover
+{
+   background: rgba(0,0,0,0.6);
+}
+.box:active
+{
+    transition: all 1s ease;
+    top:19%;
+    left:36%;
+    width:400px;
+    height:420px;
+}
+.smallbox:active{
+    transition: all 1s ease;
+    top:19%;
+    left:36%;
+    width:380px;
+    height:300px;
+}
+.box p,.smallbox p{
+    font-family: 'Josefin Sans', sans-serif;
+    #color:#c97;
+    color:#ccc;
+    font-size:15px;
+    text-align:left;
+    font-weight:bold;
+}
+.box p a,.smallbox p a{
+    color:#bbb;
+}
+.box p a,.smallbox p a:hover{
+    color:#eee;
+}
+
+p.centered{
+    text-align: center;
+    margin-top: -5px;
+    font-size: 13px;
+}
+
+p.centered a{
+    color:#c93;
+}
+
+.box input,.smallbox input{
+    padding:5px;
+    width:95%;
+    height:30px;
+    background:rgba(0,0,0,0.4);
+}
+.box  input[type="submit"], .smallbox input[type="submit"]{
+    height:55px;
+    margin: 20px 0px;
+    border:0px;
+    border-radius:15px;
+    background-color:rgba(0,0,0,0.4);
+    color:white;
+    font-size:120%;
+    font-family: 'Inconsolata',monospace;
     font-weight: bold;
 }
-
-.img-medium {
-    width:500px;
-    height: 200px;
+.smallbox input[type="submit"]{
+    font-family: 'Josefin Sans',sans-serif;
 }
 
+.box input[type="submit"]:hover,.smallbox input[type="submit"]:hover{
+    background-color: chocolate;
+}
+.box  input[type="text"],input[type="password"],input[type="number"],.smallbox input[type="text"],input[type="password"],input[type="number"]{
+    border:none;
+    border-bottom:1px solid #777;
+    font-family: 'Roboto Slab', serif;
+    font-size:120%;
+    background: transparent;
+    outline: none;
+    color:#aaa;
+    text-align: left;
+}
+.smallbox input[type="text"]{
+    text-align: center;
+}
+.man{
+    top:-40px;
+    left:calc(50% - 40px);
+    position: absolute;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+.man:active
+{
+    transition: all 1s ease;
+    transform: rotate3d(180,270,100,360deg);
+    #transform: rotate3d(180,0,0,360deg);
+}
+
+
+<!--hello-->
+
+
+header {
+    background-color:rgba(33, 33, 33, 0.9);
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+    z-index:5;
+}
+h2{
+    margin-top: 30px;
+    text-align: center;
+}
+header h2{
+    font-size: 22px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+    text-align: center;
+}
+header a, a:visited {
+    text-decoration:none;
+    color:#fcfcfc;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index:3;
+  animation:move-clouds-back 200s linear infinite;
+}
