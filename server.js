@@ -1,12 +1,17 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var connect = require('connect');
+var serveStatic = require('serve-static');
 var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+connect().use(serveStatic(__dirname)).listen(80, function(){
+    console.log('Server running on 80...');
 });
 
 app.get('/ui/style.css', function (req, res) {
